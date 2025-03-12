@@ -1,0 +1,12 @@
+/* navbar.css */
+.custom-navbar {
+  height: 12vh; /* Adjust the height as needed */
+  background-color: #003037;
+}
+
+.custom-navbar-brand {
+  font-family: "open sans";
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 2vw;
+}
