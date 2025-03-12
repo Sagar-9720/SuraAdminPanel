@@ -1,0 +1,36 @@
+/* Main container for the entire app layout */
+.app-container {
+  display: flex;
+}
+
+/* Sidebar styles (assuming Sidebar already has its own CSS) */
+.sidebar {
+  flex-shrink: 0;
+}
+
+/* Main content area next to the sidebar */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  height: 90vh; /* Full viewport height */
+  overflow-y: auto; /* Enables vertical scrolling */
+}
+
+/* Ensures the inner content doesn't shrink */
+.content-wrapper {
+  min-height: 90vh;
+}
+
+/* Optional: Styling for scrollbar */
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}

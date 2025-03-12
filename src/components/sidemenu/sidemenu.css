@@ -1,13 +1,13 @@
 .sidebar {
   max-width: 23vw;
-  min-height: 100vh;
-  background-color: #1e1e2f;
+  height: 90vh;
+  background-color: #359a61;
   padding: 15px;
   display: flex;
   flex-direction: column;
   font-family: "open sans";
-  background-color: #359a61;
   color: black;
+  overflow-y: auto; /* Enables vertical scrolling */
 }
 
 .sidebar-title {
@@ -26,14 +26,27 @@
   max-width: 15vw;
   background-color: #65d194;
   border-style: ridge;
+  border-color: black;
   text-decoration: none;
   font-size: 16px;
   position: relative;
   transition: 0.3s;
 }
 
+.sidebar-link:visited {
+  text-decoration: none;
+  border-color: black;
+}
+
+.sidebar-link:focus {
+  text-decoration: none;
+  border-color: white;
+}
+
 .sidebar-link:hover {
+  background-color: #1e1e2f;
   color: white;
+  border-color: white;
 }
 
 .active .active-indicator {
@@ -52,16 +65,16 @@
 @media screen and (max-width: 780px) {
   .sidebar {
     max-width: 50vw;
-    min-height: 100vh;
-    background-color: #1e1e2f;
+    height: 100vh;
     padding: 15px;
     display: flex;
     flex-direction: column;
-    
     font-family: "open sans";
     background-color: #359a61;
     color: black;
+    overflow-y: auto; /* Ensures scrolling in smaller viewports */
   }
+
   .sidebar-link {
     display: flex;
     align-items: center;
@@ -72,11 +85,19 @@
     max-width: 20vw;
     background-color: #65d194;
     border-style: ridge;
+    border-color: black;
     text-decoration: none;
     font-size: 12px;
     position: relative;
     transition: 0.3s;
   }
+
+  .sidebar-link:hover {
+    background-color: #1e1e2f;
+    color: white;
+    border-color: white;
+  }
+
   .sidebar-title {
     color: white;
     text-align: center;
