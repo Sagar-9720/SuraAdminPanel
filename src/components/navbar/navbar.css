@@ -1,12 +1,37 @@
 /* navbar.css */
 .custom-navbar {
-  height: 10vh; /* Adjust the height as needed */
   background-color: #003037;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .custom-navbar-brand {
   font-family: "open sans";
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
-  padding-left: 2vw;
+  color: white;
+}
+/* Logout Button Styling */
+.logout-button {
+  display: flex;
+  align-items: center;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Logout Button Hover Effect */
+.logout-button:hover {
+  background-color: #c9302c;
+}
+
+/* Logout Icon Styling */
+.logout-icon {
+  margin-right: 8px;
 }

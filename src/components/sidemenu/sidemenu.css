@@ -1,106 +1,48 @@
+/* Sidebar Container */
 .sidebar {
-  max-width: 23vw;
-  height: 90vh;
-  background-color: #359a61;
-  padding: 15px;
+  width: 100px; /* Minimal width */
+  background: white; /* Clean and modern */
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: "open sans";
-  color: black;
-  overflow-y: auto; /* Enables vertical scrolling */
+  align-items: center;
+  padding-top: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Make sidebar vertically scrollable */
+  overflow-x: hidden;
 }
 
-.sidebar-title {
-  color: white;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
+/* Sidebar Links */
 .sidebar-link {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  color: black;
+  justify-content: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 12px;
   padding: 10px;
-  margin-block: 10px;
-  min-width: 12vw;
-  max-width: 15vw;
-  background-color: #65d194;
-  border-style: ridge;
-  border-color: black;
-  text-decoration: none;
-  font-size: 16px;
-  position: relative;
-  transition: 0.3s;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
-.sidebar-link:visited {
-  text-decoration: none;
-  border-color: black;
+/* Sidebar Icons */
+.sidebar-link .icon {
+  font-size: 24px;
+  margin-bottom: 5px;
 }
 
-.sidebar-link:focus {
-  text-decoration: none;
-  border-color: white;
-}
-
-.sidebar-link:hover {
-  background-color: #1e1e2f;
-  color: white;
-  border-color: white;
-}
-
-.active .active-indicator {
-  width: 6px;
-  height: 20px;
-  background-color: #ff4757;
-  position: absolute;
-  left: 0;
-}
-
-.active {
-  color: white;
+/* Active Sidebar Link */
+.sidebar-link.active {
+  background: #b2fab4; /* Light green active background */
+  color: #0a6d0a; /* Dark green text */
   font-weight: bold;
+  border-radius: 8px;
 }
 
-@media screen and (max-width: 780px) {
-  .sidebar {
-    max-width: 50vw;
-    height: 100vh;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    font-family: "open sans";
-    background-color: #359a61;
-    color: black;
-    overflow-y: auto; /* Ensures scrolling in smaller viewports */
-  }
-
-  .sidebar-link {
-    display: flex;
-    align-items: center;
-    color: black;
-    padding: 10px;
-    margin-block: 10px;
-    min-width: 12vw;
-    max-width: 20vw;
-    background-color: #65d194;
-    border-style: ridge;
-    border-color: black;
-    text-decoration: none;
-    font-size: 12px;
-    position: relative;
-    transition: 0.3s;
-  }
-
-  .sidebar-link:hover {
-    background-color: #1e1e2f;
-    color: white;
-    border-color: white;
-  }
-
-  .sidebar-title {
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-  }
+/* Hover Effect */
+.sidebar-link:hover {
+  background: #e6f9e6;
+  color: #0a6d0a;
+  border-radius: 8px;
 }
