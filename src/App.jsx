@@ -30,6 +30,7 @@ import Advertisement from "./pages/Advertisements/advertisement";
 import UserDoubts from "./pages/UserDoubts/user_doubts";
 import UserAnswerCounts from "./pages/UserAnswerCounts/userAnswerCounts";
 import ApprovalList from "./pages/Approval_List/approval_list";
+import MediumPriceManagement from "./pages/MediumPrice/mediumPriceManagement";
 
 // Protected Routes Array
 const appRoutes = [
@@ -40,6 +41,7 @@ const appRoutes = [
   { path: "/10standard", element: <TenthStandard /> },
   { path: "/11standard", element: <EleventhStandard /> },
   { path: "/12standard", element: <TwelfthStandard /> },
+  { path: "/mediumlist", element: <MediumPriceManagement /> },
   { path: "/users", element: <Users /> },
   { path: "/keys", element: <Keys /> },
   { path: "/paymentdetails", element: <PaymentDetails /> },

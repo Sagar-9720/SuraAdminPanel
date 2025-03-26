@@ -1,36 +1,87 @@
-import React from "react";
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
-
-const data = [
-  { name: "Group A", value: 400 },
-  { name: "Group B", value: 300 },
-  { name: "Group C", value: 300 },
-  { name: "Group D", value: 200 },
-];
-
-const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+import React, { useState } from "react";
+import { Button, DatePicker } from "antd";
+import { DownloadOutlined } from "@ant-design/icons";
+import PaymentTable from "./Components/paymentTable";
+import SearchFilters from "./Components/searchFilters";
+import ExportToExcel from "./components/ExportToExcel";
+import styles from "./PaymentPage.module.css";
 
 const PaymentDetails = () => {
+  const [payments, setPayments] = useState([
+    {
+      id: 1,
+      userName: "John Doe",
+      standard: "10th",
+      medium: "English",
+      subject: "Mathematics",
+      chapter: "Algebra",
+      amount: 500,
+      status: "Success",
+      date: "2024-03-21",
+      mobile: "9876543210",
+    },
+    {
+      id: 2,
+      userName: "Jane Smith",
+      standard: "11th",
+      medium: "Tamil",
+      subject: "Physics",
+      chapter: "Optics",
+      amount: 700,
+      status: "Cancelled",
+      date: "2024-03-20",
+      mobile: "8765432109",
+    },
+  ]);
+
+  const [filteredPayments, setFilteredPayments] = useState(payments);
+  const [dateRange, setDateRange] = useState([]);
+
+  // Filter logic
+  const handleFilter = (filters) => {
+    let filteredData = [...payments];
+
+    if (filters.userName) {
+      filteredData = filteredData.filter((p) =>
+        p.userName.toLowerCase().includes(filters.userName.toLowerCase())
+      );
+    }
+    if (filters.mobile) {
+      filteredData = filteredData.filter((p) =>
+        p.mobile.includes(filters.mobile)
+      );
+    }
+    if (filters.standard) {
+      filteredData = filteredData.filter(
+        (p) => p.standard === filters.standard
+      );
+    }
+    if (filters.status) {
+      filteredData = filteredData.filter((p) => p.status === filters.status);
+    }
+    if (dateRange.length === 2) {
+      const [startDate, endDate] = dateRange;
+      filteredData = filteredData.filter(
+        (p) => p.date >= startDate && p.date <= endDate
+      );
+    }
+
+    setFilteredPayments(filteredData);
+  };
+
   return (
-    <div>
-      <h1>Payment Details</h1>
-      <PieChart width={400} height={400}>
-        <Pie
-          data={data}
-          cx={200}
-          cy={200}
-          labelLine={false}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="value"
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-        <Legend />
-      </PieChart>
+    <div className={styles.container}>
+      <h1>Payment Management</h1>
+
+      <div className={styles.filtersContainer}>
+        <SearchFilters onFilter={handleFilter} />
+        <DatePicker.RangePicker
+          onChange={(dates, dateStrings) => setDateRange(dateStrings)}
+        />
+        <ExportToExcel payments={filteredPayments} />
+      </div>
+
+      <PaymentTable payments={filteredPayments} />
     </div>
   );
 };

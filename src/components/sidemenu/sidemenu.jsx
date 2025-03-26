@@ -26,6 +26,7 @@ const Sidebar = () => {
     { to: "/10standard", label: "10th Std", icon: <BookOpen /> },
     { to: "/11standard", label: "11th Std", icon: <BookOpen /> },
     { to: "/12standard", label: "12th Std", icon: <BookOpen /> },
+    { to: "/mediumlist", lable: "Medium", icon: <LayoutDashboard /> },
     { to: "/users", label: "Users", icon: <Users /> },
     { to: "/keys", label: "Keys", icon: <Key /> },
     { to: "/paymentdetails", label: "Payments", icon: <CreditCard /> },

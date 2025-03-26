@@ -1,0 +1,46 @@
+.advertisement-container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ad-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.action-icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  color: red;
+}
+
+.table-controls {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-size-select {
+  width: 80px;
+}
+
+.add-ad-form input,
+.add-ad-form textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  width: 100%;
+}

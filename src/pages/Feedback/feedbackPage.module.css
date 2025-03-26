@@ -1,0 +1,21 @@
+.container {
+  padding: 20px;
+  background: #f9f9f9;
+  min-height: 100vh;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  width: 250px;
+}
