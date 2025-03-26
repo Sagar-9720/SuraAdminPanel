@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { Button, DatePicker } from "antd";
-import { DownloadOutlined } from "@ant-design/icons";
 import PaymentTable from "./Components/paymentTable";
 import SearchFilters from "./Components/searchFilters";
-import ExportToExcel from "./Components/ExportToExcel";
+// import ExportToExcel from "./Components/exportToExcel";
 import styles from "./PaymentPage.module.css";
 
 const PaymentDetails = () => {
@@ -78,7 +77,7 @@ const PaymentDetails = () => {
         <DatePicker.RangePicker
           onChange={(dates, dateStrings) => setDateRange(dateStrings)}
         />
-        <ExportToExcel payments={filteredPayments} />
+        {/* <ExportToExcel payments={filteredPayments} /> */}
       </div>
 
       <PaymentTable payments={filteredPayments} />
