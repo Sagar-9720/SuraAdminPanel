@@ -22,7 +22,6 @@ import TwelfthStandard from "./pages/Standards/12th_standard";
 import Admins from "./pages/Admins/admins";
 import Users from "./pages/Users/Users";
 import Keys from "./pages/Keys/keys";
-import PaymentDetails from "./pages/PaymentDetails/payment_details";
 import Feedback from "./pages/Feedback/feedback";
 import MyDocument from "./pages/Pdf/pdf";
 import PushNotifications from "./pages/PushNotifications/push_notifications";
@@ -44,7 +43,6 @@ const appRoutes = [
   { path: "/mediumlist", element: <MediumPriceManagement /> },
   { path: "/users", element: <Users /> },
   { path: "/keys", element: <Keys /> },
-  { path: "/paymentdetails", element: <PaymentDetails /> },
   { path: "/feedback", element: <Feedback /> },
   { path: "/pdf", element: <MyDocument /> },
   { path: "/pushnotifications", element: <PushNotifications /> },
