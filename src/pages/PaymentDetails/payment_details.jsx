@@ -3,7 +3,7 @@ import { Button, DatePicker } from "antd";
 import { DownloadOutlined } from "@ant-design/icons";
 import PaymentTable from "./Components/paymentTable";
 import SearchFilters from "./Components/searchFilters";
-import ExportToExcel from "./components/ExportToExcel";
+import ExportToExcel from "./Components/ExportToExcel";
 import styles from "./PaymentPage.module.css";
 
 const PaymentDetails = () => {
